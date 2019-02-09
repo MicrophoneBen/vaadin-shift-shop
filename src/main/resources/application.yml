@@ -1,0 +1,39 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: 123456
+    url: jdbc:mysql:///lt?useSSL=false
+
+vaadin:
+  servlet:
+  #是否使用Vaadin-Servlet
+    production-mode: true
+    #心态维持
+    heartbeat-interval: 60
+    #是否关闭Session
+    close-idle-sessions: true
+    #静态资源位置
+    resources:
+    #静态资源缓存时间
+    resource-cache-time: 6000
+#设置session
+server:
+  session:
+    persistent: false
+
+#配置HttpClient的连接请求
+httpclient:
+#Determines the timeout in milliseconds until a connection is established.
+  connect_timeout: 30000
+#The timeout when requesting a connection from the connection manager.
+  request_timeout: 30000
+# The timeout for waiting for data
+  socket_timeout: 60000
+#长连接默认的保持时间
+  default_keep_alive_time_millis: 20000
+#关闭一个连接的等待时长
+  close_idle_connection_wait_time_secs: 30
+#允许的最大连接数
+  max-total-connections: 50
+

@@ -1,0 +1,46 @@
+@import "mytheme.scss";
+@import "addons.scss";
+@import "_custom_calendar.scss";
+
+
+// This file prefixes all rules with the theme name to avoid causing conflicts with other themes.
+// The actual styles should be defined in mytheme.scss
+
+.mytheme {
+  @include addons;
+  @include mytheme;
+  @include shiftshp_calendar;
+
+}
+.v-sliderpanel-content .v-grid, .v-sliderpanel-content .v-table, .v-sliderpanel-content .v-treegrid-tablewrapper {
+	color: black;
+}
+
+.v-grid-cell-bgcolor-1 {
+  background-color: #FFFF99 !important
+}
+.v-grid-cell-bgcolor-2 {
+  background-color: #FF99FF !important
+}
+.v-grid-cell-bgcolor-3 {
+  background-color : #FF9999 !important
+}
+.v-grid-cell-bgcolor-4 {
+  background-color : #99FFFF !important
+}
+.v-grid-cell-bgcolor-5 {
+  background-color : #99FF99 !important
+}
+.v-grid-cell-bgcolor-6 {
+  background-color : #9999FF !important
+}
+.v-grid-cell-bgcolor-7 {
+  background-color : #999999 !important
+}
+.v-grid-cell-bgcolor-8 {
+  background-color : #F7BE81 !important
+}
+.v-grid-cell-bgcolor-9 {
+  background-color : #FFFFFF !important
+}
+

@@ -1,0 +1,426 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>1.5.16.RELEASE</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+
+    <groupId>com.css.lt</groupId>
+    <artifactId>lemon-tea-app</artifactId>
+    <packaging>jar</packaging>
+    <version>1.0.0-SNAPSHOT</version>
+    <name>lemon-tea</name>
+
+    <prerequisites>
+        <maven>3</maven>
+    </prerequisites>
+
+    <properties>
+        <project.build.finalName>lemon-tea-app</project.build.finalName>
+        <project.version>1.0.0</project.version>
+        <vaadin.version>8.5.2</vaadin.version>
+        <vaadin.plugin.version>8.5.2</vaadin.plugin.version>
+        <!--<jetty.plugin.version>9.3.9.v20160517</jetty.plugin.version>-->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <encoding>UTF-8</encoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <!-- If there are no local customizations, this can also be "fetch" or
+            "cdn" -->
+        <vaadin.widgetset.mode>local</vaadin.widgetset.mode>
+        <spring.boot.version>1.5.16.RELEASE</spring.boot.version>
+        <start-class>com.lt.css.shiftShp.ShiftShpApplication</start-class>
+    </properties>
+
+    <repositories>
+        <repository>
+            <id>vaadin-addons</id>
+            <url>http://maven.vaadin.com/vaadin-addons</url>
+        </repository>
+    </repositories>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.vaadin</groupId>
+                <artifactId>vaadin-bom</artifactId>
+                <version>${vaadin.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.vaadin</groupId>
+            <artifactId>vaadin-spring-boot-starter</artifactId>
+            <version>3.1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.vaadin.spring.extensions</groupId>
+            <artifactId>vaadin-spring-ext-core</artifactId>
+            <version>2.0.0.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>com.vaadin</groupId>
+            <artifactId>vaadin-server</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.vaadin</groupId>
+            <artifactId>vaadin-client-compiled</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.vaadin</groupId>
+            <artifactId>vaadin-themes</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.vaadin</groupId>
+            <artifactId>vaadin-compatibility-server</artifactId>
+            <version>8.1.3</version>
+        </dependency>
+        <!--添加本地的Jar包 idm -->
+        <dependency>
+            <groupId>com.css.idm</groupId>
+            <artifactId>ldap-support-server</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+
+        <!--Slider-add-on -->
+        <dependency>
+            <groupId>org.vaadin.addons</groupId>
+            <artifactId>vaadin-sliderpanel</artifactId>
+            <version>2.2.0</version>
+        </dependency>
+        <!--slider.menu-addon ends -->
+
+        <!--common-lang -->
+        <dependency>
+            <groupId>commons-lang</groupId>
+            <artifactId>commons-lang</artifactId>
+            <version>2.6</version>
+        </dependency>
+        <!--common-lang end -->
+
+        <!--添加Comfirm-dialog依赖-->
+        <dependency>
+            <groupId>org.vaadin.addon</groupId>
+            <artifactId>confirmdialog</artifactId>
+            <version>3.2.0</version>
+        </dependency>
+        <!--Confirmdialog依赖添加完毕-->
+
+        <dependency>
+            <groupId>org.vaadin.blackbluegl</groupId>
+            <artifactId>calendar-component</artifactId>
+            <version>2.0-BETA4</version>
+        </dependency>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+        </dependency>
+        <!--增强的Window Open-->
+        <dependency>
+            <groupId>org.vaadin.addon</groupId>
+            <artifactId>enhanced-window-opener</artifactId>
+            <version>0.4</version>
+        </dependency>
+        <dependency>
+            <groupId>org.vaadin</groupId>
+            <artifactId>viritin</artifactId>
+            <version>2.0</version>
+        </dependency>
+        <!--增强的windows open ends-->
+
+        <!--Gson依赖引入-->
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.8.5</version>
+        </dependency>
+        <!--Gson 依赖ends-->
+
+        <!--Http Client访问数据-->
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+            <version>4.5.6</version>
+        </dependency>
+        <!--HttpClient ends-->
+
+        <!--引入SpringBoot 配置文件读取依赖-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+        </dependency>
+        <!--配置文件读取依赖添加完毕-->
+    </dependencies>
+
+    <build>
+         <resources>
+             <resource>
+                 <directory>${basedir}/src/main/webapp</directory>
+                 <!--注意此次必须要放在此目录下才能被访问到-->
+                 <targetPath>${project.build.outputDirectory}</targetPath>
+                 <includes>
+                     <include>**/**</include>
+                 </includes>
+             </resource>
+             <resource>
+                 <directory>${basedir}/src/main/resources</directory>
+                 <includes>
+                     <include>**/**</include>
+                 </includes>
+             </resource>
+         </resources>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <mainClass>${start-class}</mainClass>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <mainClass>${start-class}</mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                    <encoding>utf-8</encoding>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>1.5.0</version>
+                <executions>
+                    <execution>
+                        <id>stylesheet</id>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>java</goal>
+                        </goals>
+                        <configuration>
+                            <includeProjectDependencies>true</includeProjectDependencies>
+                            <includePluginDependencies>true</includePluginDependencies>
+                            <executableDependency>
+                                <groupId>com.vaadin</groupId>
+                                <artifactId>vaadin-sass-compiler</artifactId>
+                            </executableDependency>
+                            <mainClass>com.vaadin.sass.SassCompiler</mainClass>
+                            <arguments>
+                                <argument>${basedir}/src/main/webapp/VAADIN/themes/mytheme/mytheme.scss</argument>
+                            </arguments>
+                        </configuration>
+                    </execution>
+                </executions>
+                <dependencies>
+                    <dependency>
+                        <groupId>com.vaadin</groupId>
+                        <artifactId>vaadin-sass-compiler</artifactId>
+                        <version>0.9.13</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+
+            <plugin>
+                <groupId>com.vaadin</groupId>
+                <artifactId>vaadin-maven-plugin</artifactId>
+                <version>${vaadin.plugin.version}</version>
+                <configuration>
+                    <extraJvmArgs>-Xmx1g -Xss1024k</extraJvmArgs>
+                    <webappDirectory>${project.build.outputDirectory}/VAADIN/widgetsets</webappDirectory>
+                    <hostedWebapp>${project.build.outputDirectory}/VAADIN/widgetsets</hostedWebapp>
+                    <noServer>true</noServer>
+                    <!-- Remove draftCompile when project is ready -->
+                    <draftCompile>true</draftCompile>
+                    <persistentunitcachedir>${project.build.directory}/gwtdirt</persistentunitcachedir>
+                    <compileReport>false</compileReport>
+                    <style>OBF</style>
+                    <strict>true</strict>
+                    <!-- Symbol maps etc, not needed in vaadin app, just target them outside war -->
+                    <deploy>${project.build.directory}/gwt-deploy</deploy>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>update-widgetset</goal>
+                            <goal>clean</goal>
+                            <goal>compile</goal>
+                            <goal>resources</goal>
+                            <goal>compile-theme</goal>
+                            <goal>update-theme</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-clean-plugin</artifactId>
+                <version>3.0.0</version>
+                <!-- Clean up also any pre-compiled themes -->
+                <configuration>
+                    <filesets>
+                        <fileset>
+                            <directory>src/main/webapp/VAADIN/themes</directory>
+                            <includes>
+                                <include>**/styles.css</include>
+                                <include>**/styles.scss.cache</include>
+                            </includes>
+                        </fileset>
+                        <fileset>
+                            <directory>src/main/webapp/VAADIN/widgetsets</directory>
+                        </fileset>
+                        <fileset>
+                            <directory>src/main/webapp/VAADIN/gwt-unitCache</directory>
+                        </fileset>
+                    </filesets>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>com.spotify</groupId>
+                <artifactId>docker-maven-plugin</artifactId>
+                <version>1.2.0</version>
+                <configuration>
+                    <imageName>ghostben/${project.artifactId}:${project.version}</imageName>
+                    <dockerDirectory>${basedir}</dockerDirectory>
+                    <forceTags>true</forceTags>
+                    <baseImage>ghostben/java1.8.0_201:1.0.0</baseImage>
+                    <entryPoint>["java","-jar","/${project.build.finalName}.jar"]</entryPoint>
+                    <resources>
+                        <resource>
+                            <targetPath>${project.basedir}/target/</targetPath>
+                            <directory>${project.build.directory}</directory>
+                            <include>./${project.build.finalName}-${project.version}.jar</include>
+                        </resource>
+                    </resources>
+                </configuration>
+            </plugin>
+
+            <!-- 		The Jetty plugin allows us to easily test the development build by
+                        running jetty:run on the command line. -->
+            <!--	<plugin>
+                    <groupId>org.eclipse.jetty</groupId>
+                    <artifactId>jetty-maven-plugin</artifactId>
+                    <version>${jetty.plugin.version}</version>
+                    <configuration>
+                        <scanIntervalSeconds>1</scanIntervalSeconds>
+                    </configuration>
+                </plugin>-->
+        </plugins>
+
+        <pluginManagement>
+            <plugins>
+                <!-- 	This plugin's configuration is used to store Eclipse m2e settings
+                        only. It has no influence on the Maven build itself. -->
+                <plugin>
+                    <groupId>org.eclipse.m2e</groupId>
+                    <artifactId>lifecycle-mapping</artifactId>
+                    <version>1.0.0</version>
+                    <configuration>
+                        <lifecycleMappingMetadata>
+                            <pluginExecutions>
+                                <pluginExecution>
+                                    <pluginExecutionFilter>
+                                        <groupId>com.vaadin</groupId>
+                                        <artifactId>
+                                            vaadin-maven-plugin
+                                        </artifactId>
+                                        <versionRange>
+                                            [7.1.0,)
+                                        </versionRange>
+                                        <goals>
+                                            <goal>resources</goal>
+                                            <goal>
+                                                update-widgetset
+                                            </goal>
+                                            <goal>compile-theme</goal>
+                                            <goal>update-theme</goal>
+                                        </goals>
+                                    </pluginExecutionFilter>
+                                </pluginExecution>
+                            </pluginExecutions>
+                        </lifecycleMappingMetadata>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+
+    <profiles>
+        <profile>
+            <!-- Vaadin pre-release repositories -->
+            <id>vaadin-prerelease</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+
+            <repositories>
+                <repository>
+                    <id>vaadin-prereleases</id>
+                    <url>http://maven.vaadin.com/vaadin-prereleases</url>
+                </repository>
+                <repository>
+                    <id>vaadin-snapshots</id>
+                    <url>https://oss.sonatype.org/content/repositories/vaadin-snapshots/</url>
+                    <releases>
+                        <enabled>false</enabled>
+                    </releases>
+                    <snapshots>
+                        <enabled>true</enabled>
+                    </snapshots>
+                </repository>
+            </repositories>
+            <pluginRepositories>
+                <pluginRepository>
+                    <id>vaadin-prereleases</id>
+                    <url>http://maven.vaadin.com/vaadin-prereleases</url>
+                </pluginRepository>
+                <pluginRepository>
+                    <id>vaadin-snapshots</id>
+                    <url>https://oss.sonatype.org/content/repositories/vaadin-snapshots/</url>
+                    <releases>
+                        <enabled>false</enabled>
+                    </releases>
+                    <snapshots>
+                        <enabled>true</enabled>
+                    </snapshots>
+                </pluginRepository>
+            </pluginRepositories>
+        </profile>
+    </profiles>
+
+</project>

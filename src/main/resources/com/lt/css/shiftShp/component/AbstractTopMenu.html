@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <meta name="design-properties" content="{&quot;RULERS_VISIBLE&quot;:true,&quot;GUIDELINES_VISIBLE&quot;:true,&quot;SNAP_TO_OBJECTS&quot;:true,&quot;SNAP_TO_GRID&quot;:true,&quot;SNAPPING_DISTANCE&quot;:10,&quot;GENERATE_GETTERS&quot;:true,&quot;JAVA_SOURCES_ROOT&quot;:&quot;src/main/java&quot;,&quot;THEME&quot;:&quot;mytheme&quot;}">
+  <meta name="vaadin-version" content="8.1.5">
+ </head>
+ <body>
+  <vaadin-vertical-layout size-full margin-top="false" margin-bottom="false">
+   <vaadin-vertical-layout size-full margin-left="false" margin-right="false" margin-top="false" _id="mainLayout" :middle :center :expand="2">
+    <vaadin-horizontal-layout style-name="inline-icon v-window-top-toolbar" width-full margin-left margin-right _id="menuBar" :expand>
+     <vaadin-image width="73%" height-full alt="公司Icon" _id="cssLogo" :expand></vaadin-image>
+     <vaadin-button icon="fonticon://Vaadin-Icons/e7ec" style-name="quiet" width="25%" height-full plain-text icon-alt="主页" _id="mainPage" :expand></vaadin-button>
+     <vaadin-combo-box page-length="5" style-name="align-center quiet align-center" placeholder="功能" width="50%" height-full data-item-type="java.lang.String" :expand>
+      <option item="Option1">Option 1</option>
+      <option item="Option2">Option 2</option>
+      <option item="Option3">Option 3</option>
+     </vaadin-combo-box>
+     <vaadin-text-field style-name="Icon inside" size-full maxlength="4" _id="searchTxt" :center :expand></vaadin-text-field>
+     <vaadin-button icon="fonticon://Vaadin-Icons/e758" style-name="icon-only quiet" width="25%" height-full plain-text icon-alt="通知" _id="bellnav" :right :expand>
+       通知 
+     </vaadin-button>
+     <vaadin-button icon="fonticon://Vaadin-Icons/e7c4" style-name="icon-only quiet" width="25%" height-full plain-text icon-alt="待办事项" _id="todoList" :expand>
+       待办事项 
+     </vaadin-button>
+     <vaadin-combo-box scroll-to-selected-item page-length="5" style-name="inline-icon quiet" placeholder="我的功能选项" size-full data-item-type="java.lang.String" _id="accountNav" :expand>
+      <option item="Option1">Option 1</option>
+      <option item="Option2">Option 2</option>
+      <option item="Option3">Option 3</option>
+     </vaadin-combo-box>
+    </vaadin-horizontal-layout>
+   </vaadin-vertical-layout>
+  </vaadin-vertical-layout>
+ </body>
+</html>
